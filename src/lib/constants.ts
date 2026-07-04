@@ -10,8 +10,8 @@ export const NAV_ITEMS = [
   { label: "サービス紹介", href: "#service" },
   { label: "開催実績", href: "#track-record" },
   { label: "開催予定", href: "#schedule" },
-  { label: "開催プラン", href: "#hosting-plan" },
   { label: "協賛プラン", href: "#sponsor-plan" },
+  { label: "開催プラン", href: "#hosting-plan" },
   { label: "運営について", href: "#about-operator" },
   { label: "お問い合わせ", href: "#contact" },
 ] as const;

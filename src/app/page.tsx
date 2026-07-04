@@ -18,8 +18,8 @@ export default function Home() {
         <ServiceIntro />
         <TrackRecord />
         <Schedule />
-        <HostingPlan />
         <SponsorPlan />
+        <HostingPlan />
         <AboutOperator />
         <Contact />
       </main>

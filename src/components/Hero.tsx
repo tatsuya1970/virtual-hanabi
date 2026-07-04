@@ -39,15 +39,54 @@ function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?
 }
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const playVideo = () => {
+      void video.play().catch(() => {
+        // Autoplay blocked until user interaction on some mobile browsers.
+      });
+    };
+
+    playVideo();
+
+    video.addEventListener("loadeddata", playVideo);
+    video.addEventListener("canplay", playVideo);
+
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") playVideo();
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    const handleInteraction = () => playVideo();
+    document.addEventListener("touchstart", handleInteraction, { once: true, passive: true });
+
+    return () => {
+      video.removeEventListener("loadeddata", playVideo);
+      video.removeEventListener("canplay", playVideo);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      document.removeEventListener("touchstart", handleInteraction);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-end pb-20 sm:pb-28 overflow-hidden">
       {/* Background video */}
       <div className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          poster="/images/kure/yamato.png"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
@@ -89,10 +128,10 @@ export default function Hero() {
         </div>
 
         <a
-          href="#contact"
+          href="#sponsor-plan"
           className="inline-block px-6 py-3 bg-white text-night-900 text-sm font-semibold rounded hover:bg-gray-100 transition-colors"
         >
-          開催・協賛のご相談
+          開催・協賛プランを見る
         </a>
       </div>
     </section>

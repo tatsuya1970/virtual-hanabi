@@ -47,8 +47,7 @@ export default function SponsorPlan() {
             ¥10,000<span className="text-xs font-normal text-gray-500 ml-1">税込</span>
           </p>
           <p className="text-sm text-gray-400 leading-relaxed">
-            お名前やメッセージを、1時間に1回テロップで表示します。
-            応援や記念のメッセージにどうぞ。
+            お名前を、1時間に1回テロップで表示します。
           </p>
         </div>
       </div>
