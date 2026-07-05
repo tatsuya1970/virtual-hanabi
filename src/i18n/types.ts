@@ -41,6 +41,7 @@ export type Dictionary = {
     total: string;
     eventLink: string;
     xSummaryLink: string;
+    videoLink: string;
     events: HanabiEvent[];
   };
   schedule: {

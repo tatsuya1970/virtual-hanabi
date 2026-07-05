@@ -56,6 +56,11 @@ export default function TrackRecord({ dict }: { dict: Dictionary }) {
                               {dict.trackRecord.xSummaryLink}
                             </a>
                           )}
+                          {ed.videoUrl && (
+                            <a href={ed.videoUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gold-400 transition-colors ml-2">
+                              {dict.trackRecord.videoLink}
+                            </a>
+                          )}
                         </td>
                       </tr>
                     ))}

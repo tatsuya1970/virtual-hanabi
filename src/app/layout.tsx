@@ -11,6 +11,11 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 };
 
 export default async function RootLayout({

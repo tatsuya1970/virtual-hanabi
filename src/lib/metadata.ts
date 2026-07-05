@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/i18n";
-import { SITE_URL } from "./site";
+import { OG_IMAGE, SITE_URL } from "./site";
 
 export function createPageMetadata(locale: Locale): Metadata {
   const dict = getDictionary(locale);
@@ -29,10 +29,12 @@ export function createPageMetadata(locale: Locale): Metadata {
       siteName: dict.siteName,
       images: [
         {
-          url: "/images/kure/yamato.png",
-          width: 1280,
-          height: 660,
+          url: OG_IMAGE.path,
+          secureUrl: OG_IMAGE.path,
+          width: OG_IMAGE.width,
+          height: OG_IMAGE.height,
           alt: dict.meta.ogImageAlt,
+          type: OG_IMAGE.type,
         },
       ],
     },
@@ -40,7 +42,12 @@ export function createPageMetadata(locale: Locale): Metadata {
       card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
-      images: ["/images/kure/yamato.png"],
+      images: [
+        {
+          url: OG_IMAGE.path,
+          alt: dict.meta.ogImageAlt,
+        },
+      ],
     },
     robots: {
       index: true,

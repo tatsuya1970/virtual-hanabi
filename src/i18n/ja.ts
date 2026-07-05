@@ -63,6 +63,7 @@ export const ja: Dictionary = {
     total: "合計",
     eventLink: "イベント",
     xSummaryLink: "Xまとめ",
+    videoLink: "動画",
     events,
   },
   schedule: {
