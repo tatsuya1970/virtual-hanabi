@@ -113,9 +113,11 @@ export const ja: Dictionary = {
   contact: {
     title: "お問い合わせ",
     description:
-      "開催のご相談、協賛のお申し込み、取材のご依頼など、下記メールアドレスまでお気軽にご連絡ください。",
+      "開催のご相談、協賛のお申し込み、取材のご依頼など、下記フォームよりお送りください。通常2〜3営業日以内にご返信いたします。",
     emailSubject: "バーチャル花火大会について",
-    formPending: "お問い合わせフォームは準備中です。",
+    formButton: "お問い合わせフォームを開く",
+    emailNote: "またはメールでもお問い合わせいただけます",
+    formUrl: "https://forms.gle/JnDJbpS93RKKwHhF8",
   },
   faq: {
     title: "よくある質問",

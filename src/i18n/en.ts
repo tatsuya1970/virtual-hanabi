@@ -214,9 +214,11 @@ export const en: Dictionary = {
   contact: {
     title: "Contact",
     description:
-      "For hosting inquiries, sponsorship applications, media requests, and other questions, please contact us at the email address below.",
+      "For hosting inquiries, sponsorship applications, media requests, and other questions, please use the form below. We usually reply within 2–3 business days.",
     emailSubject: "Inquiry about Virtual Fireworks Festival",
-    formPending: "Contact form coming soon.",
+    formButton: "Open contact form",
+    emailNote: "Or contact us by email",
+    formUrl: "https://forms.gle/KmNfzytDCk3eVWr5A",
   },
   faq: {
     title: "Frequently Asked Questions",

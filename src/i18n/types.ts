@@ -85,7 +85,9 @@ export type Dictionary = {
     title: string;
     description: string;
     emailSubject: string;
-    formPending: string;
+    formButton: string;
+    emailNote: string;
+    formUrl: string;
   };
   faq: {
     title: string;
