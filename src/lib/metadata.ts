@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/i18n";
 import { OG_IMAGE, SITE_URL } from "./site";
 
+const ogImageUrl = `${SITE_URL}${OG_IMAGE.path}?v=2`;
+
 export function createPageMetadata(locale: Locale): Metadata {
   const dict = getDictionary(locale);
   const path = locale === "en" ? "/en" : "/";
@@ -29,8 +31,8 @@ export function createPageMetadata(locale: Locale): Metadata {
       siteName: dict.siteName,
       images: [
         {
-          url: OG_IMAGE.path,
-          secureUrl: OG_IMAGE.path,
+          url: ogImageUrl,
+          secureUrl: ogImageUrl,
           width: OG_IMAGE.width,
           height: OG_IMAGE.height,
           alt: dict.meta.ogImageAlt,
@@ -42,12 +44,12 @@ export function createPageMetadata(locale: Locale): Metadata {
       card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
-      images: [
-        {
-          url: OG_IMAGE.path,
-          alt: dict.meta.ogImageAlt,
-        },
-      ],
+      images: [ogImageUrl],
+    },
+    other: {
+      "twitter:image": ogImageUrl,
+      "twitter:image:src": ogImageUrl,
+      "twitter:image:alt": dict.meta.ogImageAlt,
     },
     robots: {
       index: true,
