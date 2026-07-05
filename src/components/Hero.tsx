@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { totalStats } from "@/data/events";
+import type { Dictionary } from "@/i18n";
 
 function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -38,8 +39,11 @@ function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?
   );
 }
 
-export default function Hero() {
+export default function Hero({ dict }: { dict: Dictionary }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const titleParts = dict.hero.titleMobileBreak
+    ? dict.hero.title.split("、")
+    : [dict.hero.title];
 
   useEffect(() => {
     const video = videoRef.current;
@@ -77,7 +81,6 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-end pb-20 sm:pb-28 overflow-hidden">
-      {/* Background video */}
       <div className="absolute inset-0">
         <video
           ref={videoRef}
@@ -86,7 +89,7 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          poster="/images/kure/yamato.png"
+          poster={dict.hero.videoPoster}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
@@ -95,35 +98,39 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <p className="text-sm text-gold-400 tracking-widest mb-3">Virtual Fireworks Festival</p>
+        <p className="text-sm text-gold-400 tracking-widest mb-3">{dict.hero.tagline}</p>
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight tracking-tight">
-          花火大会、<br className="sm:hidden" />
-          バーチャルで。
+          {dict.hero.titleMobileBreak ? (
+            <>
+              {titleParts[0]}、<br className="sm:hidden" />
+              {titleParts[1]}
+            </>
+          ) : (
+            dict.hero.title
+          )}
         </h1>
-        <p className="text-base sm:text-lg text-gray-300 mb-10 max-w-lg leading-relaxed">
-          花火大会を、メタバース空間で。<br />
-          2021年から広島県内で5つの大会を開催してきました。
+        <p className="text-base sm:text-lg text-gray-300 mb-10 max-w-lg leading-relaxed whitespace-pre-line">
+          {dict.hero.description}
         </p>
 
-        {/* Stats - horizontal, compact */}
         <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10 text-sm">
           <div>
             <span className="text-2xl font-bold text-white tabular-nums">
               <CountUp end={totalStats.totalEvents} />
             </span>
-            <span className="text-gray-400 ml-1">回開催</span>
+            <span className="text-gray-400 ml-1">{dict.hero.stats.events}</span>
           </div>
           <div>
             <span className="text-2xl font-bold text-white tabular-nums">
               <CountUp end={totalStats.totalParticipants} />
             </span>
-            <span className="text-gray-400 ml-1">名が参加</span>
+            <span className="text-gray-400 ml-1">{dict.hero.stats.participants}</span>
           </div>
           <div>
             <span className="text-2xl font-bold text-white tabular-nums">
               <CountUp end={totalStats.totalFestivals} />
             </span>
-            <span className="text-gray-400 ml-1">大会</span>
+            <span className="text-gray-400 ml-1">{dict.hero.stats.festivals}</span>
           </div>
         </div>
 
@@ -131,7 +138,7 @@ export default function Hero() {
           href="#sponsor-plan"
           className="inline-block px-6 py-3 bg-white text-night-900 text-sm font-semibold rounded hover:bg-gray-100 transition-colors"
         >
-          開催・協賛プランを見る
+          {dict.hero.cta}
         </a>
       </div>
     </section>

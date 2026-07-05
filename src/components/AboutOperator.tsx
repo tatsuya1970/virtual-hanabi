@@ -1,31 +1,27 @@
 import SectionTitle from "./SectionTitle";
-import {
-  ORGANIZER_BRAND,
-  ORGANIZER_NAME,
-  ORGANIZER_WEBSITE,
-} from "@/lib/constants";
+import type { Dictionary } from "@/i18n";
 
-export default function AboutOperator() {
+export default function AboutOperator({ dict }: { dict: Dictionary }) {
   return (
     <section id="about-operator" className="py-20 sm:py-28 px-4 sm:px-6 max-w-4xl mx-auto">
-      <SectionTitle>運営について</SectionTitle>
+      <SectionTitle>{dict.about.title}</SectionTitle>
 
-      <p className="text-gray-300 leading-relaxed mb-4">
-        バーチャル花火大会は、広島を拠点に活動するクリエイター{ORGANIZER_NAME}（{ORGANIZER_BRAND}）が運営・主催しています。
-        AI・XR・IoTを活用したメタバース制作やプロトタイプ開発を中心に、地域の花火大会をバーチャル空間で届ける取り組みを行っています。
-      </p>
-
-      <p className="text-gray-400 text-sm leading-relaxed mb-8">
-        運営者のプロフィール、サービス内容、講演実績などの詳細は、公式サイトをご覧ください。
-      </p>
+      {dict.about.paragraphs.map((paragraph) => (
+        <p
+          key={paragraph.slice(0, 24)}
+          className={`leading-relaxed mb-4 ${paragraph === dict.about.paragraphs.at(-1) ? "text-gray-400 text-sm mb-8" : "text-gray-300"}`}
+        >
+          {paragraph}
+        </p>
+      ))}
 
       <a
-        href={ORGANIZER_WEBSITE}
+        href={dict.organizer.websiteUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 transition-colors underline underline-offset-4"
       >
-        {ORGANIZER_BRAND} 公式サイト
+        {dict.about.websiteLink}
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path
             strokeLinecap="round"

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { SITE_NAME, NAV_ITEMS } from "@/lib/constants";
+import type { Dictionary } from "@/i18n";
 
-export default function Header() {
+export default function Header({ dict }: { dict: Dictionary }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,12 +21,12 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14">
-          <a href="#" className="text-sm font-bold text-white tracking-wide">
-            {SITE_NAME}
+          <a href={dict.locale === "ja" ? "#" : "/en"} className="text-sm font-bold text-white tracking-wide">
+            {dict.siteName}
           </a>
 
           <nav className="hidden md:flex items-center gap-6">
-            {NAV_ITEMS.map((item) => (
+            {dict.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -35,28 +35,42 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+            <a
+              href={dict.langSwitch.href}
+              className="text-xs text-gold-400 hover:text-gold-300 transition-colors"
+            >
+              {dict.langSwitch.label}
+            </a>
           </nav>
 
-          <button
-            className="md:hidden text-gray-400 p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="メニュー"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          <div className="md:hidden flex items-center gap-1">
+            <a
+              href={dict.langSwitch.href}
+              className="text-xs text-gold-400 hover:text-gold-300 transition-colors px-2 py-2"
+            >
+              {dict.langSwitch.label}
+            </a>
+            <button
+              className="text-gray-400 p-2"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={dict.locale === "ja" ? "メニュー" : "Menu"}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
       {menuOpen && (
         <nav className="md:hidden bg-night-900/95 backdrop-blur-md border-t border-white/5">
           <div className="px-4 py-3 space-y-1">
-            {NAV_ITEMS.map((item) => (
+            {dict.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import { headers } from "next/headers";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
-import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -9,23 +10,19 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} - メタバースで花火大会を開催`,
-  description: SITE_DESCRIPTION,
-  openGraph: {
-    title: `${SITE_NAME} - メタバースで花火大会を開催`,
-    description: SITE_DESCRIPTION,
-    locale: "ja_JP",
-    type: "website",
-  },
+  metadataBase: new URL(SITE_URL),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const locale = headersList.get("x-locale") === "en" ? "en" : "ja";
+
   return (
-    <html lang="ja" className={`${notoSansJP.variable} antialiased`}>
+    <html lang={locale} className={`${notoSansJP.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );

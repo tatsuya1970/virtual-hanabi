@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import HomePage from "@/components/HomePage";
 import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = createPageMetadata("ja");
+export const metadata: Metadata = createPageMetadata("en");
 
 export default function Page() {
-  return <HomePage locale="ja" />;
+  return <HomePage locale="en" />;
 }
