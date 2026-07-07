@@ -37,6 +37,7 @@ export type Dictionary = {
   trackRecord: {
     title: string;
     subtitle: string;
+    datasetDescription: string;
     photoPending: string;
     total: string;
     eventLink: string;
@@ -96,6 +97,10 @@ export type Dictionary = {
   };
   footer: {
     operatedBy: string;
+    privacyPolicy: string;
+    legalNotice: string;
+    privacyPolicyUrl: string;
+    legalNoticeUrl: string;
   };
   organizer: {
     name: string;

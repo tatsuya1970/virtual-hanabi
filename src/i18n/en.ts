@@ -160,6 +160,8 @@ export const en: Dictionary = {
   trackRecord: {
     title: "Track Record",
     subtitle: "Five fireworks festivals since 2021. 4,075 participants in total.",
+    datasetDescription:
+      "Track record data for Virtual Fireworks Festival events held in Hiroshima Prefecture since 2021. Covers five festival series across Kure, Tomonoura, Hiroshima, Fukuyama, and Miyajima, including event counts and participant numbers.",
     photoPending: "Photo coming soon",
     total: "Total",
     eventLink: "Event",
@@ -258,6 +260,10 @@ export const en: Dictionary = {
   },
   footer: {
     operatedBy: "Operated by",
+    privacyPolicy: "Privacy Policy",
+    legalNotice: "Legal Notice",
+    privacyPolicyUrl: "https://www.takemura-techlab.com/privacy_en.html",
+    legalNoticeUrl: "https://www.takemura-techlab.com/tokusho_en.html",
   },
   organizer: {
     name: "Tatsuya Takemura",

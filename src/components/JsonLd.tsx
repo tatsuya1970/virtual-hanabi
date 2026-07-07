@@ -128,7 +128,16 @@ export default function JsonLd({ locale }: { locale: Locale }) {
     "@context": "https://schema.org",
     "@type": "Dataset",
     name: locale === "ja" ? "バーチャル花火大会 開催実績" : "Virtual Fireworks Festival Track Record",
-    description: dict.trackRecord.subtitle,
+    description: dict.trackRecord.datasetDescription,
+    url: pageUrl,
+    creator: {
+      "@type": "Organization",
+      name: dict.organizer.brand,
+      url: dict.organizer.websiteUrl,
+    },
+    license: locale === "ja"
+      ? "https://www.takemura-techlab.com/tokusho.html"
+      : "https://www.takemura-techlab.com/tokusho_en.html",
     variableMeasured: [
       { "@type": "PropertyValue", name: "totalEvents", value: totalStats.totalEvents },
       { "@type": "PropertyValue", name: "totalParticipants", value: totalStats.totalParticipants },

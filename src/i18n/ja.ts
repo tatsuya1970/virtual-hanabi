@@ -59,6 +59,8 @@ export const ja: Dictionary = {
   trackRecord: {
     title: "開催実績",
     subtitle: "2021年から5つの花火大会を開催。延べ4,075名が参加しました。",
+    datasetDescription:
+      "2021年から広島県内で開催してきたバーチャル花火大会の開催実績データです。呉・鞆の浦・広島・福山・宮島の5大会について、開催回数、参加者数、開催地などの情報を掲載しています。",
     photoPending: "写真準備中",
     total: "合計",
     eventLink: "イベント",
@@ -157,6 +159,10 @@ export const ja: Dictionary = {
   },
   footer: {
     operatedBy: "運営",
+    privacyPolicy: "プライバシーポリシー",
+    legalNotice: "特定商取引法に基づく表記",
+    privacyPolicyUrl: "https://www.takemura-techlab.com/privacy.html",
+    legalNoticeUrl: "https://www.takemura-techlab.com/tokusho.html",
   },
   organizer: {
     name: "武村達也",
