@@ -1,6 +1,5 @@
 import { totalStats } from "@/data/events";
 import { getDictionary, type Locale } from "@/i18n";
-import { CONTACT_EMAIL } from "@/lib/constants";
 import { SITE_URL } from "@/lib/site";
 
 function JsonLdScript({ data }: { data: Record<string, unknown> }) {
@@ -31,10 +30,11 @@ export default function JsonLd({ locale }: { locale: Locale }) {
     "@type": "Organization",
     name: dict.organizer.brand,
     url: dict.organizer.websiteUrl,
-    email: CONTACT_EMAIL,
-    founder: {
-      "@type": "Person",
-      name: dict.organizer.name,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      url: dict.contact.formUrl,
+      availableLanguage: locale === "ja" ? ["Japanese", "English"] : ["English", "Japanese"],
     },
   };
 

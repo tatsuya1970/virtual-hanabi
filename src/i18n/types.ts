@@ -89,6 +89,7 @@ export type Dictionary = {
     emailSubject: string;
     formButton: string;
     emailNote: string;
+    emailReveal: string;
     formUrl: string;
   };
   faq: {

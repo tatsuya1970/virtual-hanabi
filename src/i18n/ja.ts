@@ -120,6 +120,7 @@ export const ja: Dictionary = {
     emailSubject: "バーチャル花火大会について",
     formButton: "お問い合わせフォームを開く",
     emailNote: "またはメールでもお問い合わせいただけます",
+    emailReveal: "メールアドレスを表示",
     formUrl: "https://forms.gle/JnDJbpS93RKKwHhF8",
   },
   faq: {

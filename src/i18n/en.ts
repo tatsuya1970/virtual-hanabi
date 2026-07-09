@@ -221,6 +221,7 @@ export const en: Dictionary = {
     emailSubject: "Inquiry about Virtual Fireworks Festival",
     formButton: "Open contact form",
     emailNote: "Or contact us by email",
+    emailReveal: "Show email address",
     formUrl: "https://forms.gle/KmNfzytDCk3eVWr5A",
   },
   faq: {

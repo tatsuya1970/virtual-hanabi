@@ -1,5 +1,5 @@
 import SectionTitle from "./SectionTitle";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import ObfuscatedEmail from "./ObfuscatedEmail";
 import type { Dictionary } from "@/i18n";
 
 export default function Contact({ dict }: { dict: Dictionary }) {
@@ -20,12 +20,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
         </a>
 
         <p className="text-xs text-gray-500 mt-6 mb-2">{dict.contact.emailNote}</p>
-        <a
-          href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(dict.contact.emailSubject)}`}
-          className="text-sm text-gold-400 hover:text-gold-300 transition-colors underline underline-offset-4 break-all"
-        >
-          {CONTACT_EMAIL}
-        </a>
+        <ObfuscatedEmail subject={dict.contact.emailSubject} revealLabel={dict.contact.emailReveal} />
       </div>
     </section>
   );
