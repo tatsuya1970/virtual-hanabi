@@ -23,8 +23,8 @@ export const events: HanabiEvent[] = [
     id: "kure",
     name: "バーチャル呉花火大会",
     shortName: "呉",
-    totalEditions: 4,
-    totalParticipants: 2324,
+    totalEditions: 5,
+    totalParticipants: 2454,
     feature: "戦艦大和に乗れる / バスに乗りながら花火鑑賞",
     image: "/images/kure/yamato.png",
     editions: [
@@ -32,6 +32,7 @@ export const events: HanabiEvent[] = [
       { edition: 2, date: "2022/7/30", participants: 851, eventUrl: "https://cluster.mu/e/a4b5f146-b542-4237-a501-a615ecd38025", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/3VvkDcL", videoUrl: "https://youtu.be/WrpR720lyg0" },
       { edition: 3, date: "2024/7/20", participants: 896, eventUrl: "https://cluster.mu/e/46f57acb-576d-47d5-85de-c1645e0d1f58", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/exNi0P0", videoUrl: "https://youtu.be/T6LHRukMplk" },
       { edition: 4, date: "2025/7/19", participants: 325, eventUrl: "https://cluster.mu/e/548eacf0-952d-4cac-a27f-45a9e38ecf7b", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/q58yTlC" },
+      { edition: 5, date: "2026/7/18", participants: 130, eventUrl: "https://cluster.mu/e/2e625054-4fcc-4064-8a3c-b9250aee9e84" },
     ],
   },
   {
@@ -88,8 +89,8 @@ export const events: HanabiEvent[] = [
 ];
 
 export const totalStats = {
-  totalEvents: 13,
-  totalParticipants: 4075,
+  totalEvents: 14,
+  totalParticipants: 4205,
   totalFestivals: 5,
   years: 5,
 };
