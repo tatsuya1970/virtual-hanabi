@@ -16,7 +16,7 @@ const eventsEn: HanabiEvent[] = [
       { edition: 2, date: "Jul 30, 2022", participants: 851, eventUrl: "https://cluster.mu/e/a4b5f146-b542-4237-a501-a615ecd38025", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/3VvkDcL", videoUrl: "https://youtu.be/WrpR720lyg0" },
       { edition: 3, date: "Jul 20, 2024", participants: 896, eventUrl: "https://cluster.mu/e/46f57acb-576d-47d5-85de-c1645e0d1f58", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/exNi0P0", videoUrl: "https://youtu.be/T6LHRukMplk" },
       { edition: 4, date: "Jul 19, 2025", participants: 325, eventUrl: "https://cluster.mu/e/548eacf0-952d-4cac-a27f-45a9e38ecf7b", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/q58yTlC" },
-      { edition: 5, date: "Jul 18, 2026", participants: 130, eventUrl: "https://cluster.mu/e/2e625054-4fcc-4064-8a3c-b9250aee9e84" },
+      { edition: 5, date: "Jul 18, 2026", participants: 130, eventUrl: "https://cluster.mu/e/2e625054-4fcc-4064-8a3c-b9250aee9e84", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/9ceKJAW" },
     ],
   },
   {
