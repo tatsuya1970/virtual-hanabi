@@ -38,13 +38,14 @@ const eventsEn: HanabiEvent[] = [
     id: "hiroshima",
     name: "Virtual Hiroshima Fireworks Festival",
     shortName: "Hiroshima",
-    totalEditions: 2,
-    totalParticipants: 650,
+    totalEditions: 3,
+    totalParticipants: 755,
     feature: "Ride the streetcar",
     image: "/images/hiroshima/photo1.jpeg",
     editions: [
       { edition: 1, date: "Jul 27, 2024", participants: 461, eventUrl: "https://cluster.mu/e/ee4c856c-ef29-4aba-8230-99fbadc31612", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/Faw9KQR", videoUrl: "https://youtu.be/U3NdPXEOIQ8" },
       { edition: 2, date: "Jul 26, 2025", participants: 189, eventUrl: "https://cluster.mu/e/745af647-3597-4ce0-b024-62bc04e48bf0", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/Q1JgVJJ" },
+      { edition: 3, date: "Jul 25, 2026", participants: 105, eventUrl: "https://cluster.mu/e/c95c0ebb-3963-4acd-b853-dcdb9afd5b98", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/oPKsIPC" },
     ],
   },
   {
@@ -92,8 +93,8 @@ const scheduleEn: ScheduleItem[] = [
     name: "Virtual Hiroshima Fireworks Festival",
     date: "Sat, Jul 25, 2026",
     dateObj: new Date("2026-07-25"),
-    status: "upcoming",
-    clusterUrl: "https://cluster.mu/e/c95c0ebb-3963-4acd-b853-dcdb9afd5b98",
+    status: "finished",
+    clusterUrl: null,
   },
   {
     name: "Virtual Ashidagawa Fireworks Festival",
@@ -109,7 +110,7 @@ export const en: Dictionary = {
   meta: {
     title: "Virtual Fireworks Festival - Fireworks in the Metaverse",
     description:
-      "Host fireworks festivals in the metaverse. A low-cost alternative for cancelled events and a way to keep local celebrations going. 14 events held with 4,205 total participants.",
+      "Host fireworks festivals in the metaverse. A low-cost alternative for cancelled events and a way to keep local celebrations going. 15 events held with 4,310 total participants.",
     ogLocale: "en_US",
     keywords: [
       "virtual fireworks festival",
@@ -160,7 +161,7 @@ export const en: Dictionary = {
   },
   trackRecord: {
     title: "Track Record",
-    subtitle: "Five fireworks festivals since 2021. 4,205 participants in total.",
+    subtitle: "Five fireworks festivals since 2021. 4,310 participants in total.",
     datasetDescription:
       "Track record data for Virtual Fireworks Festival events held in Hiroshima Prefecture since 2021. Covers five festival series across Kure, Tomonoura, Hiroshima, Fukuyama, and Miyajima, including event counts and participant numbers.",
     photoPending: "Photo coming soon",
@@ -251,7 +252,7 @@ export const en: Dictionary = {
       {
         question: "Where have events been held?",
         answer:
-          "Since 2021, we have hosted five festivals across Hiroshima Prefecture (Kure, Tomonoura, Hiroshima, Ashidagawa, and Miyajima) — 14 events with 4,205 total participants.",
+          "Since 2021, we have hosted five festivals across Hiroshima Prefecture (Kure, Tomonoura, Hiroshima, Ashidagawa, and Miyajima) — 15 events with 4,310 total participants.",
       },
       {
         question: "Who organizes this?",

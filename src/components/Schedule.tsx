@@ -3,25 +3,79 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "./SectionTitle";
 import type { Dictionary } from "@/i18n";
+import type { ScheduleItem } from "@/data/schedule";
 import { formatDaysLeft, formatEdition } from "@/i18n/format";
 
-function Countdown({ targetDate, dict }: { targetDate: Date; dict: Dictionary }) {
+// 開催日は日付単位で管理しているため、時刻を無視した「日数差」で比較する。
+// 当日は 0、過去は負の値になる。
+function daysUntil(targetDate: Date) {
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const target = Date.UTC(
+    targetDate.getUTCFullYear(),
+    targetDate.getUTCMonth(),
+    targetDate.getUTCDate()
+  );
+  return Math.round((target - today) / (1000 * 60 * 60 * 24));
+}
+
+// SSR 時は日付が確定しないため null を返し、マウント後に計算する。
+function useDaysLeft(targetDate: Date) {
   const [days, setDays] = useState<number | null>(null);
 
   useEffect(() => {
-    const calc = () => {
-      const now = new Date();
-      const diff = targetDate.getTime() - now.getTime();
-      setDays(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
-    };
+    const calc = () => setDays(daysUntil(targetDate));
     calc();
     const interval = setInterval(calc, 60000);
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  if (days === null) return null;
-  if (days === 0) return <span className="text-fire-400 text-sm font-bold">{dict.schedule.today}</span>;
-  return <span className="text-gray-400 text-sm">{formatDaysLeft(dict.locale, days)}</span>;
+  return days;
+}
+
+function ScheduleRow({ item, dict }: { item: ScheduleItem; dict: Dictionary }) {
+  const daysLeft = useDaysLeft(item.dateObj);
+  // データ更新が漏れても、開催日を過ぎたものは自動的に「終了」扱いにする。
+  const finished = item.status === "finished" || (daysLeft !== null && daysLeft < 0);
+
+  return (
+    <tr className="border-b border-white/5">
+      <td className="py-4 pr-4">
+        <p className={`font-bold ${finished ? "text-gray-500" : "text-white"}`}>
+          {item.name}
+          {item.edition && (
+            <span className="text-gray-400 text-sm font-normal ml-2">
+              {formatEdition(dict.locale, item.edition)}
+            </span>
+          )}
+        </p>
+        <p className="text-sm text-gray-400">{item.date}</p>
+      </td>
+      <td className="py-4 text-right whitespace-nowrap">
+        {finished ? (
+          <span className="text-gray-500 text-sm">{dict.schedule.finished}</span>
+        ) : (
+          <div className="flex items-center justify-end gap-4">
+            {daysLeft === 0 ? (
+              <span className="text-fire-400 text-sm font-bold">{dict.schedule.today}</span>
+            ) : daysLeft !== null ? (
+              <span className="text-gray-400 text-sm">{formatDaysLeft(dict.locale, daysLeft)}</span>
+            ) : null}
+            {item.clusterUrl && (
+              <a
+                href={item.clusterUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-1.5 border border-gold-400 text-gold-400 text-sm rounded hover:bg-gold-400 hover:text-night-900 transition-colors"
+              >
+                {dict.schedule.join}
+              </a>
+            )}
+          </div>
+        )}
+      </td>
+    </tr>
+  );
 }
 
 export default function Schedule({ dict }: { dict: Dictionary }) {
@@ -32,38 +86,7 @@ export default function Schedule({ dict }: { dict: Dictionary }) {
       <table className="w-full">
         <tbody>
           {dict.schedule.items.map((item) => (
-            <tr key={item.name} className="border-b border-white/5">
-              <td className="py-4 pr-4">
-                <p className={`font-bold ${item.status === "finished" ? "text-gray-500" : "text-white"}`}>
-                  {item.name}
-                  {item.edition && (
-                    <span className="text-gray-400 text-sm font-normal ml-2">
-                      {formatEdition(dict.locale, item.edition)}
-                    </span>
-                  )}
-                </p>
-                <p className="text-sm text-gray-400">{item.date}</p>
-              </td>
-              <td className="py-4 text-right whitespace-nowrap">
-                {item.status === "finished" ? (
-                  <span className="text-gray-500 text-sm">{dict.schedule.finished}</span>
-                ) : (
-                  <div className="flex items-center justify-end gap-4">
-                    <Countdown targetDate={item.dateObj} dict={dict} />
-                    {item.clusterUrl && (
-                      <a
-                        href={item.clusterUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-1.5 border border-gold-400 text-gold-400 text-sm rounded hover:bg-gold-400 hover:text-night-900 transition-colors"
-                      >
-                        {dict.schedule.join}
-                      </a>
-                    )}
-                  </div>
-                )}
-              </td>
-            </tr>
+            <ScheduleRow key={item.name} item={item} dict={dict} />
           ))}
         </tbody>
       </table>

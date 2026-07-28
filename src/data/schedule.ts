@@ -27,9 +27,8 @@ export const schedule2026: ScheduleItem[] = [
     name: "バーチャル広島花火大会",
     date: "2026年7月25日(土)",
     dateObj: new Date("2026-07-25"),
-    status: "upcoming",
-    clusterUrl:
-      "https://cluster.mu/e/c95c0ebb-3963-4acd-b853-dcdb9afd5b98",
+    status: "finished",
+    clusterUrl: null,
   },
   {
     name: "バーチャルあしだ川花火大会",

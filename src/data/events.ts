@@ -54,13 +54,14 @@ export const events: HanabiEvent[] = [
     id: "hiroshima",
     name: "バーチャル広島花火大会",
     shortName: "広島",
-    totalEditions: 2,
-    totalParticipants: 650,
+    totalEditions: 3,
+    totalParticipants: 755,
     feature: "路面電車に乗れる",
     image: "/images/hiroshima/photo1.jpeg",
     editions: [
       { edition: 1, date: "2024/7/27", participants: 461, eventUrl: "https://cluster.mu/e/ee4c856c-ef29-4aba-8230-99fbadc31612", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/Faw9KQR", videoUrl: "https://youtu.be/U3NdPXEOIQ8" },
       { edition: 2, date: "2025/7/26", participants: 189, eventUrl: "https://cluster.mu/e/745af647-3597-4ce0-b024-62bc04e48bf0", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/Q1JgVJJ" },
+      { edition: 3, date: "2026/7/25", participants: 105, eventUrl: "https://cluster.mu/e/c95c0ebb-3963-4acd-b853-dcdb9afd5b98", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/oPKsIPC" },
     ],
   },
   {
@@ -89,8 +90,8 @@ export const events: HanabiEvent[] = [
 ];
 
 export const totalStats = {
-  totalEvents: 14,
-  totalParticipants: 4205,
+  totalEvents: 15,
+  totalParticipants: 4310,
   totalFestivals: 5,
   years: 5,
 };
