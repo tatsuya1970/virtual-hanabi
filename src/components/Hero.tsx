@@ -48,7 +48,7 @@ function NextEventBanner({ item, dict }: { item: ScheduleItem; dict: Dictionary 
   if (daysLeft !== null && daysLeft < 0) return null;
 
   return (
-    <div className="mb-8 inline-flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border border-gold-400/50 bg-night-900/70 backdrop-blur-sm px-5 py-4">
+    <div className="mb-8 flex w-fit flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border border-gold-400/50 bg-night-900/70 backdrop-blur-sm px-5 py-4">
       <div>
         <p className="text-xs text-gold-400 tracking-widest mb-1">
           {dict.hero.nextEventLabel}
@@ -137,7 +137,6 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
-        {nextEvent && <NextEventBanner item={nextEvent} dict={dict} />}
         <p className="text-sm text-gold-400 tracking-widest mb-3">{dict.hero.tagline}</p>
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight tracking-tight">
           {dict.hero.titleMobileBreak ? (
@@ -173,6 +172,8 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             <span className="text-gray-400 ml-1">{dict.hero.stats.festivals}</span>
           </div>
         </div>
+
+        {nextEvent && <NextEventBanner item={nextEvent} dict={dict} />}
 
         <a
           href="#sponsor-plan"
