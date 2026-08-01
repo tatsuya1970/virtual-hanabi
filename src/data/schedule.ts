@@ -35,6 +35,6 @@ export const schedule2026: ScheduleItem[] = [
     date: "2026年8月15日(土)",
     dateObj: new Date("2026-08-15"),
     status: "upcoming",
-    clusterUrl: null,
+    clusterUrl: "https://cluster.mu/e/ed4b6014-5826-4305-88c2-693b1d4941d7",
   },
 ];
