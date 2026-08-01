@@ -147,6 +147,7 @@ export const en: Dictionary = {
       festivals: "festivals",
     },
     cta: "View hosting & sponsorship plans",
+    nextEventLabel: "NEXT EVENT",
     videoPoster: "/images/kure/yamato.png",
   },
   service: {

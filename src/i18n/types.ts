@@ -26,6 +26,7 @@ export type Dictionary = {
       festivals: string;
     };
     cta: string;
+    nextEventLabel: string;
     videoPoster: string;
   };
   service: {

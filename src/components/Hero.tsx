@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 
 import { totalStats } from "@/data/events";
 import type { Dictionary } from "@/i18n";
+import type { ScheduleItem } from "@/data/schedule";
+import { formatDaysLeft } from "@/i18n/format";
+import { useDaysLeft } from "@/hooks/useDaysLeft";
 
 function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -39,8 +42,44 @@ function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?
   );
 }
 
+function NextEventBanner({ item, dict }: { item: ScheduleItem; dict: Dictionary }) {
+  const daysLeft = useDaysLeft(item.dateObj);
+  // 開催日を過ぎたらバナーごと非表示にする。
+  if (daysLeft !== null && daysLeft < 0) return null;
+
+  return (
+    <div className="mb-8 inline-flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border border-gold-400/50 bg-night-900/70 backdrop-blur-sm px-5 py-4">
+      <div>
+        <p className="text-xs text-gold-400 tracking-widest mb-1">
+          {dict.hero.nextEventLabel}
+        </p>
+        <p className="font-bold text-white text-lg leading-snug">{item.name}</p>
+        <p className="text-sm text-gray-300">{item.date}</p>
+      </div>
+      <div className="flex items-center gap-4">
+        {daysLeft === 0 ? (
+          <span className="text-fire-400 text-sm font-bold">{dict.schedule.today}</span>
+        ) : daysLeft !== null ? (
+          <span className="text-gray-300 text-sm">{formatDaysLeft(dict.locale, daysLeft)}</span>
+        ) : null}
+        {item.clusterUrl && (
+          <a
+            href={item.clusterUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-gold-400 text-night-900 text-sm font-bold rounded hover:bg-gold-300 transition-colors"
+          >
+            {dict.schedule.join}
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Hero({ dict }: { dict: Dictionary }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const nextEvent = dict.schedule.items.find((item) => item.status === "upcoming");
   const titleParts = dict.hero.titleMobileBreak
     ? dict.hero.title.split("、")
     : [dict.hero.title];
@@ -98,6 +137,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
+        {nextEvent && <NextEventBanner item={nextEvent} dict={dict} />}
         <p className="text-sm text-gold-400 tracking-widest mb-3">{dict.hero.tagline}</p>
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight tracking-tight">
           {dict.hero.titleMobileBreak ? (

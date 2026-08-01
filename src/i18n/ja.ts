@@ -44,6 +44,7 @@ export const ja: Dictionary = {
       festivals: "大会",
     },
     cta: "開催・協賛プランを見る",
+    nextEventLabel: "次回開催",
     videoPoster: "/images/kure/yamato.png",
   },
   service: {
