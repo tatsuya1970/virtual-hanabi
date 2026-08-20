@@ -52,13 +52,14 @@ const eventsEn: HanabiEvent[] = [
     id: "ashida",
     name: "Virtual Ashidagawa Fireworks Festival",
     shortName: "Ashidagawa",
-    totalEditions: 2,
-    totalParticipants: 388,
+    totalEditions: 3,
+    totalParticipants: 514,
     feature: "Ride the discontinued Tomo Railway",
     image: "/images/ashida/GVBncjpboAAS0y1.jpeg",
     editions: [
       { edition: 1, date: "Aug 15, 2024", participants: 199, eventUrl: "https://cluster.mu/e/1c609b06-9488-4b9e-ab9f-add598740ed8", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/W6XifTD", videoUrl: "https://youtu.be/rBgzP7VFL6Q" },
       { edition: 2, date: "Aug 15, 2025", participants: 189, eventUrl: "https://cluster.mu/e/2e6d946c-30e3-4718-a82b-0939097a1884" },
+      { edition: 3, date: "Aug 15, 2026", participants: 126, eventUrl: "https://cluster.mu/e/ed4b6014-5826-4305-88c2-693b1d4941d7" },
     ],
   },
   {
@@ -100,8 +101,8 @@ const scheduleEn: ScheduleItem[] = [
     name: "Virtual Ashidagawa Fireworks Festival",
     date: "Sat, Aug 15, 2026",
     dateObj: new Date("2026-08-15"),
-    status: "upcoming",
-    clusterUrl: "https://cluster.mu/e/ed4b6014-5826-4305-88c2-693b1d4941d7",
+    status: "finished",
+    clusterUrl: null,
   },
 ];
 
@@ -110,7 +111,7 @@ export const en: Dictionary = {
   meta: {
     title: "Virtual Fireworks Festival - Fireworks in the Metaverse",
     description:
-      "Host fireworks festivals in the metaverse. A low-cost alternative for cancelled events and a way to keep local celebrations going. 15 events held with 4,310 total participants.",
+      "Host fireworks festivals in the metaverse. A low-cost alternative for cancelled events and a way to keep local celebrations going. 16 events held with 4,436 total participants.",
     ogLocale: "en_US",
     keywords: [
       "virtual fireworks festival",
@@ -162,7 +163,7 @@ export const en: Dictionary = {
   },
   trackRecord: {
     title: "Track Record",
-    subtitle: "Five fireworks festivals since 2021. 4,310 participants in total.",
+    subtitle: "Five fireworks festivals since 2021. 4,436 participants in total.",
     datasetDescription:
       "Track record data for Virtual Fireworks Festival events held in Hiroshima Prefecture since 2021. Covers five festival series across Kure, Tomonoura, Hiroshima, Fukuyama, and Miyajima, including event counts and participant numbers.",
     photoPending: "Photo coming soon",
@@ -253,7 +254,7 @@ export const en: Dictionary = {
       {
         question: "Where have events been held?",
         answer:
-          "Since 2021, we have hosted five festivals across Hiroshima Prefecture (Kure, Tomonoura, Hiroshima, Ashidagawa, and Miyajima) — 15 events with 4,310 total participants.",
+          "Since 2021, we have hosted five festivals across Hiroshima Prefecture (Kure, Tomonoura, Hiroshima, Ashidagawa, and Miyajima) — 16 events with 4,436 total participants.",
       },
       {
         question: "Who organizes this?",

@@ -68,13 +68,14 @@ export const events: HanabiEvent[] = [
     id: "ashida",
     name: "バーチャルあしだ川花火大会",
     shortName: "あしだ川",
-    totalEditions: 2,
-    totalParticipants: 388,
+    totalEditions: 3,
+    totalParticipants: 514,
     feature: "廃線となった鞆鉄道に乗れる",
     image: "/images/ashida/GVBncjpboAAS0y1.jpeg",
     editions: [
       { edition: 1, date: "2024/8/15", participants: 199, eventUrl: "https://cluster.mu/e/1c609b06-9488-4b9e-ab9f-add598740ed8", xSummaryUrl: "https://posfie.com/@tatsuya1970/p/W6XifTD", videoUrl: "https://youtu.be/rBgzP7VFL6Q" },
       { edition: 2, date: "2025/8/15", participants: 189, eventUrl: "https://cluster.mu/e/2e6d946c-30e3-4718-a82b-0939097a1884" },
+      { edition: 3, date: "2026/8/15", participants: 126, eventUrl: "https://cluster.mu/e/ed4b6014-5826-4305-88c2-693b1d4941d7" },
     ],
   },
   {
@@ -90,8 +91,8 @@ export const events: HanabiEvent[] = [
 ];
 
 export const totalStats = {
-  totalEvents: 15,
-  totalParticipants: 4310,
+  totalEvents: 16,
+  totalParticipants: 4436,
   totalFestivals: 5,
   years: 5,
 };
