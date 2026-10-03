@@ -111,7 +111,7 @@ export const en: Dictionary = {
   meta: {
     title: "Virtual Fireworks Festival - Fireworks in the Metaverse",
     description:
-      "Host fireworks festivals in the metaverse. A low-cost alternative for cancelled events and a way to keep local celebrations going. 16 events held with 4,436 total participants.",
+      "Build your town's fireworks festival in the metaverse. A low-cost alternative for cancelled events and a way to keep local celebrations going. 16 events held with 4,436 total participants.",
     ogLocale: "en_US",
     keywords: [
       "virtual fireworks festival",
@@ -138,17 +138,21 @@ export const en: Dictionary = {
   langSwitch: { label: "日本語", href: "/" },
   hero: {
     tagline: "Virtual Fireworks Festival",
-    title: "Fireworks festivals, virtually.",
+    title: "We can build your town's fireworks festival.",
     titleMobileBreak: false,
     description:
-      "Experience fireworks festivals in the metaverse. We have hosted five festivals across Hiroshima Prefecture since 2021.",
+      "We recreate your town's landscape in the metaverse and host a fireworks festival there. Five festivals held across Hiroshima Prefecture since 2021.",
     stats: {
       events: "events held",
       participants: "participants",
       festivals: "festivals",
     },
-    cta: "View hosting & sponsorship plans",
+    cta: "Host it in your town",
     nextEventLabel: "NEXT EVENT",
+    notice: {
+      label: "NEWS",
+      text: "A web version is now in production alongside cluster. The URL will be announced soon.",
+    },
     videoPoster: "/images/kure/yamato.png",
   },
   service: {
@@ -158,7 +162,8 @@ export const en: Dictionary = {
       "Using 3D city model data from PLATEAU by Japan's Ministry of Land, Infrastructure, Transport and Tourism, terrain and buildings are reproduced as they appear on site. Enjoy fireworks in a vast world that includes entire downtown areas, with a real sense of wind and open space.",
       "This is not just a video stream. Stand on the deck of the battleship Yamato, ride a streetcar, and enjoy experiences unique to each location.",
     ],
-    platforms: "Supported platform: cluster (PC / iOS / Android / Meta Quest)",
+    platforms:
+      "Supported platform: cluster (PC / iOS / Android / Meta Quest)\nA browser-based web version is also in production alongside cluster (URL to be announced).",
     imageAlt: "Screenshot of a virtual fireworks festival",
   },
   trackRecord: {
@@ -198,16 +203,18 @@ export const en: Dictionary = {
     cta: "Inquire about sponsorship →",
   },
   hosting: {
-    title: "Interested in Hosting?",
+    title: "Host One in Your Town",
     paragraphs: [
-      "We offer virtual fireworks festivals for municipalities whose events were cancelled and for companies planning local events.",
+      "We build virtual fireworks festivals for your town — for municipalities whose events were cancelled and for companies planning local events.",
       "We handle everything from building the metaverse venue to running the event on the day. Hybrid events with AR at the physical site are also available.",
     ],
     flowTitle: "How it works",
     flow: "Inquiry → Discovery → Proposal → Production → Rehearsal → Event day",
     cta: "Discuss hosting",
-    priceLabel: "Starting from",
-    price: "¥100,000",
+    prices: [
+      { label: "Venue production", amount: "From ¥300,000", amountJpy: 300000 },
+      { label: "Event hosting", amount: "From ¥100,000", amountJpy: 100000 },
+    ],
     priceNote: "Varies by scale and scope",
   },
   about: {
@@ -244,7 +251,7 @@ export const en: Dictionary = {
       {
         question: "How much does it cost to host an event?",
         answer:
-          "Hosting plans for municipalities and companies start from ¥100,000. We handle everything from building the metaverse venue to running the event on the day. Pricing varies by scale and scope.",
+          "For municipalities and companies, venue production starts from ¥300,000 and event hosting starts from ¥100,000. We handle everything from building the metaverse venue to running the event on the day. Pricing varies by scale and scope.",
       },
       {
         question: "Are there sponsorship plans?",

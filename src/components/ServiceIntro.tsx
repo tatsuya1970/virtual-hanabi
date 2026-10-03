@@ -14,7 +14,9 @@ export default function ServiceIntro({ dict }: { dict: Dictionary }) {
               {paragraph}
             </p>
           ))}
-          <p className="text-gray-400 text-sm">{dict.service.platforms}</p>
+          <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
+            {dict.service.platforms}
+          </p>
         </div>
         <div className="relative aspect-video rounded-lg overflow-hidden">
           <Image

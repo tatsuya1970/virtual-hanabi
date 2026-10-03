@@ -7,7 +7,7 @@ export const ja: Dictionary = {
   meta: {
     title: "バーチャル花火大会 - メタバースで花火大会を開催",
     description:
-      "メタバース空間で花火大会を開催。中止となった花火大会の代替案として、低コストで地域イベントを継続できます。全16回・延べ4,436名の開催実績。",
+      "あなたの街の花火大会を、メタバース空間でつくれます。中止となった花火大会の代替案として、低コストで地域イベントを継続できます。全16回・延べ4,436名の開催実績。",
     ogLocale: "ja_JP",
     keywords: [
       "バーチャル花火大会",
@@ -35,16 +35,21 @@ export const ja: Dictionary = {
   langSwitch: { label: "English", href: "/en" },
   hero: {
     tagline: "Virtual Fireworks Festival",
-    title: "花火大会、バーチャルで。",
+    title: "あなたの街の花火大会を、つくれます。",
     titleMobileBreak: true,
-    description: "花火大会を、メタバース空間で。\n2021年から広島県内で5つの大会を開催してきました。",
+    description:
+      "あなたの街の風景をメタバース空間に再現して、花火大会を開催できます。\n2021年から広島県内で5つの大会を開催してきました。",
     stats: {
       events: "回開催",
       participants: "名が参加",
       festivals: "大会",
     },
-    cta: "開催・協賛プランを見る",
+    cta: "あなたの街で開催する",
     nextEventLabel: "次回開催",
+    notice: {
+      label: "お知らせ",
+      text: "現在、cluster以外にウェブ版を制作中です。URLは後日公開します。",
+    },
     videoPoster: "/images/kure/yamato.png",
   },
   service: {
@@ -54,7 +59,8 @@ export const ja: Dictionary = {
       "国土交通省の3D都市モデル「PLATEAU」のデータを活用しているため、地形や建物は現地どおりに再現されています。市街地まるごと取り込んだ広大なワールドのなかで、風や空間の広がりを感じながら花火を楽しめます。",
       "ただの映像配信ではありません。戦艦大和の甲板に立ったり、路面電車に乗ったり、その土地ならではの体験を盛り込んでいるのが特徴です。",
     ],
-    platforms: "対応プラットフォーム: cluster（PC / iOS / Android / Meta Quest）",
+    platforms:
+      "対応プラットフォーム: cluster（PC / iOS / Android / Meta Quest）\ncluster以外に、ブラウザで参加できるウェブ版も制作中です（URLは後日公開）。",
     imageAlt: "バーチャル花火大会のスクリーンショット",
   },
   trackRecord: {
@@ -94,16 +100,18 @@ export const ja: Dictionary = {
     cta: "協賛について問い合わせる →",
   },
   hosting: {
-    title: "開催をお考えの方へ",
+    title: "あなたの街で開催しませんか",
     paragraphs: [
-      "花火大会が中止になった自治体や、地域イベントを企画したい企業の方に、バーチャル花火大会の開催をご提案しています。",
+      "花火大会が中止になった自治体や、地域イベントを企画したい企業の方に、あなたの街の花火大会をバーチャル空間で開催するご提案をしています。",
       "会場となるメタバース空間の制作から当日の運営までまとめて対応します。AR連携で現地でのハイブリッド開催にも対応できます。",
     ],
     flowTitle: "開催までの流れ",
     flow: "お問い合わせ → ヒアリング → 企画提案 → 制作 → リハーサル → 開催",
     cta: "開催について相談する",
-    priceLabel: "開催費用",
-    price: "10万円〜",
+    prices: [
+      { label: "会場作成費用", amount: "30万円〜", amountJpy: 300000 },
+      { label: "花火大会開催費用", amount: "10万円〜", amountJpy: 100000 },
+    ],
     priceNote: "規模・内容により変動します",
   },
   about: {
@@ -140,7 +148,7 @@ export const ja: Dictionary = {
       {
         question: "開催費用はいくらですか？",
         answer:
-          "自治体・企業向けの開催プランは10万円〜です。会場となるメタバース空間の制作から当日運営まで対応します。規模・内容により費用は変動します。",
+          "自治体・企業向けの開催プランは、会場作成費用が30万円〜、花火大会開催費用が10万円〜です。会場となるメタバース空間の制作から当日運営まで対応します。規模・内容により費用は変動します。",
       },
       {
         question: "協賛プランはありますか？",

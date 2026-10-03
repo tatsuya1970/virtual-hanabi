@@ -67,13 +67,13 @@ export default function JsonLd({ locale }: { locale: Locale }) {
         priceCurrency: "JPY",
         description: dict.sponsor.telopPlan.description,
       },
-      {
+      ...dict.hosting.prices.map((price) => ({
         "@type": "Offer",
-        name: dict.hosting.title,
-        price: "100000",
+        name: price.label,
+        price: String(price.amountJpy),
         priceCurrency: "JPY",
         description: dict.hosting.paragraphs[0],
-      },
+      })),
     ],
   };
 

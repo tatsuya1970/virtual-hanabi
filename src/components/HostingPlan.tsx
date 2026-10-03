@@ -27,10 +27,16 @@ export default function HostingPlan({ dict }: { dict: Dictionary }) {
           </div>
 
           <div className="flex items-start">
-            <div className="bg-night-900/80 border border-white/10 rounded-lg px-8 py-6 text-center">
-              <p className="text-xs text-gray-400 mb-1">{dict.hosting.priceLabel}</p>
-              <p className="text-3xl font-bold text-white">{dict.hosting.price}</p>
-              <p className="text-xs text-gray-500 mt-2">{dict.hosting.priceNote}</p>
+            <div className="bg-night-900/80 border border-white/10 rounded-lg px-8 py-6">
+              <dl className="divide-y divide-white/10">
+                {dict.hosting.prices.map((price) => (
+                  <div key={price.label} className="py-3 first:pt-0 last:pb-0">
+                    <dt className="text-xs text-gray-400 mb-1">{price.label}</dt>
+                    <dd className="text-2xl sm:text-3xl font-bold text-white">{price.amount}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="text-xs text-gray-500 mt-4">{dict.hosting.priceNote}</p>
             </div>
           </div>
         </div>

@@ -27,6 +27,10 @@ export type Dictionary = {
     };
     cta: string;
     nextEventLabel: string;
+    notice: {
+      label: string;
+      text: string;
+    };
     videoPoster: string;
   };
   service: {
@@ -75,8 +79,7 @@ export type Dictionary = {
     flowTitle: string;
     flow: string;
     cta: string;
-    priceLabel: string;
-    price: string;
+    prices: { label: string; amount: string; amountJpy: number }[];
     priceNote: string;
   };
   about: {
