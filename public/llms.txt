@@ -10,7 +10,7 @@ Virtual Fireworks Festival hosts local fireworks events inside cluster metaverse
 
 - Service: Virtual fireworks festivals in the metaverse — any town's landscape can be recreated and used as the venue
 - Platform: cluster (PC / iOS / Android / Meta Quest)
-- In production: a web (browser) version in addition to cluster; URL to be announced
+- Also available: a browser-based web version (demo: https://d15o88vdraqc06.cloudfront.net/), alongside cluster (demo world: https://cluster.mu/w/b2db31ab-9fe4-41fa-965c-5c61a51642f1)
 - Organizer: Tatsuya Takemura / Takemura Tech Lab (Hiroshima, Japan)
 - Contact: use the contact form at https://virtual-hanabi.com/#contact
 - Track record: 13 events, 4,075 participants, 5 festival series

@@ -149,10 +149,6 @@ export const en: Dictionary = {
     },
     cta: "Host it in your town",
     nextEventLabel: "NEXT EVENT",
-    notice: {
-      label: "NEWS",
-      text: "A web version is now in production alongside cluster. The URL will be announced soon.",
-    },
     videoPoster: "/images/kure/yamato.png",
   },
   service: {
@@ -163,7 +159,7 @@ export const en: Dictionary = {
       "This is not just a video stream. Stand on the deck of the battleship Yamato, ride a streetcar, and enjoy experiences unique to each location.",
     ],
     platforms:
-      "Supported platform: cluster (PC / iOS / Android / Meta Quest)\nA browser-based web version is also in production alongside cluster (URL to be announced).",
+      "Supported platform: cluster (PC / iOS / Android / Meta Quest)\nA browser-based web version is also available — no app required.",
     imageAlt: "Screenshot of a virtual fireworks festival",
   },
   trackRecord: {
@@ -211,6 +207,11 @@ export const en: Dictionary = {
     flowTitle: "How it works",
     flow: "Inquiry → Discovery → Proposal → Production → Rehearsal → Event day",
     cta: "Discuss hosting",
+    demoTitle: "Try the demo",
+    demos: [
+      { label: "Web demo (opens in your browser)", href: "https://d15o88vdraqc06.cloudfront.net/" },
+      { label: "cluster demo (opens in cluster)", href: "https://cluster.mu/w/b2db31ab-9fe4-41fa-965c-5c61a51642f1" },
+    ],
     prices: [
       { label: "Venue production", amount: "From ¥300,000", amountJpy: 300000 },
       { label: "Event hosting", amount: "From ¥100,000", amountJpy: 100000 },

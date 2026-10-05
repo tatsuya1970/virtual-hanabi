@@ -46,10 +46,6 @@ export const ja: Dictionary = {
     },
     cta: "あなたの街で開催する",
     nextEventLabel: "次回開催",
-    notice: {
-      label: "お知らせ",
-      text: "現在、cluster以外にウェブ版を制作中です。URLは後日公開します。",
-    },
     videoPoster: "/images/kure/yamato.png",
   },
   service: {
@@ -60,7 +56,7 @@ export const ja: Dictionary = {
       "ただの映像配信ではありません。戦艦大和の甲板に立ったり、路面電車に乗ったり、その土地ならではの体験を盛り込んでいるのが特徴です。",
     ],
     platforms:
-      "対応プラットフォーム: cluster（PC / iOS / Android / Meta Quest）\ncluster以外に、ブラウザで参加できるウェブ版も制作中です（URLは後日公開）。",
+      "対応プラットフォーム: cluster（PC / iOS / Android / Meta Quest）\nアプリ不要でブラウザから参加できるウェブ版にも対応しています。",
     imageAlt: "バーチャル花火大会のスクリーンショット",
   },
   trackRecord: {
@@ -108,6 +104,11 @@ export const ja: Dictionary = {
     flowTitle: "開催までの流れ",
     flow: "お問い合わせ → ヒアリング → 企画提案 → 制作 → リハーサル → 開催",
     cta: "開催について相談する",
+    demoTitle: "デモを体験する",
+    demos: [
+      { label: "ウェブ版デモ（ブラウザで開く）", href: "https://d15o88vdraqc06.cloudfront.net/" },
+      { label: "cluster版デモ（clusterで開く）", href: "https://cluster.mu/w/b2db31ab-9fe4-41fa-965c-5c61a51642f1" },
+    ],
     prices: [
       { label: "会場作成費用", amount: "30万円〜", amountJpy: 300000 },
       { label: "花火大会開催費用", amount: "10万円〜", amountJpy: 100000 },

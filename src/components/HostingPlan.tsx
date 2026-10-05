@@ -18,6 +18,22 @@ export default function HostingPlan({ dict }: { dict: Dictionary }) {
             <h3 className="text-white font-bold mb-3">{dict.hosting.flowTitle}</h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-8">{dict.hosting.flow}</p>
 
+            <h3 className="text-white font-bold mb-3">{dict.hosting.demoTitle}</h3>
+            <ul className="flex flex-wrap gap-3 mb-8">
+              {dict.hosting.demos.map((demo) => (
+                <li key={demo.href}>
+                  <a
+                    href={demo.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 border border-gold-400/60 text-gold-400 text-sm rounded hover:bg-gold-400/10 transition-colors"
+                  >
+                    {demo.label} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+
             <a
               href="#contact"
               className="inline-block px-6 py-3 bg-white text-night-900 text-sm font-semibold rounded hover:bg-gray-100 transition-colors"

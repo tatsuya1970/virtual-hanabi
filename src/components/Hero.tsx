@@ -137,13 +137,6 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-6 flex w-fit flex-wrap items-center gap-x-3 gap-y-2 rounded-full border border-gold-400/60 bg-night-900/70 backdrop-blur-sm pl-2 pr-4 py-2">
-          <span className="rounded-full bg-gold-400 px-2.5 py-1 text-[11px] font-bold tracking-widest text-night-900">
-            {dict.hero.notice.label}
-          </span>
-          <span className="text-sm text-gray-100">{dict.hero.notice.text}</span>
-        </div>
-
         <p className="text-sm text-gold-400 tracking-widest mb-3">{dict.hero.tagline}</p>
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight tracking-tight">
           {dict.hero.titleMobileBreak ? (
