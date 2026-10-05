@@ -207,10 +207,10 @@ export const en: Dictionary = {
     flowTitle: "How it works",
     flow: "Inquiry → Discovery → Proposal → Production → Rehearsal → Event day",
     cta: "Discuss hosting",
-    demoTitle: "Try the demo",
+    demoTitle: "Try the demo (Kure Fireworks Festival)",
     demos: [
-      { label: "Web demo (opens in your browser)", href: "https://d15o88vdraqc06.cloudfront.net/" },
-      { label: "cluster demo (opens in cluster)", href: "https://cluster.mu/w/b2db31ab-9fe4-41fa-965c-5c61a51642f1" },
+      { label: "Web demo (no app install required)", href: "https://d15o88vdraqc06.cloudfront.net/" },
+      { label: "cluster demo (cluster app required)", href: "https://cluster.mu/w/b2db31ab-9fe4-41fa-965c-5c61a51642f1" },
     ],
     prices: [
       { label: "Venue production", amount: "From ¥300,000", amountJpy: 300000 },

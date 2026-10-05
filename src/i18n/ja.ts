@@ -104,10 +104,10 @@ export const ja: Dictionary = {
     flowTitle: "開催までの流れ",
     flow: "お問い合わせ → ヒアリング → 企画提案 → 制作 → リハーサル → 開催",
     cta: "開催について相談する",
-    demoTitle: "デモを体験する",
+    demoTitle: "デモを体験する（呉花火大会）",
     demos: [
-      { label: "ウェブ版デモ（ブラウザで開く）", href: "https://d15o88vdraqc06.cloudfront.net/" },
-      { label: "cluster版デモ（clusterで開く）", href: "https://cluster.mu/w/b2db31ab-9fe4-41fa-965c-5c61a51642f1" },
+      { label: "ウェブ版デモ（アプリのインストール不要）", href: "https://d15o88vdraqc06.cloudfront.net/" },
+      { label: "cluster版デモ（アプリのインストール要）", href: "https://cluster.mu/w/b2db31ab-9fe4-41fa-965c-5c61a51642f1" },
     ],
     prices: [
       { label: "会場作成費用", amount: "30万円〜", amountJpy: 300000 },
